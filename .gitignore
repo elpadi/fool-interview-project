@@ -21,3 +21,24 @@ node_modules/
 *.log
 *.sql
 *.sqlite
+
+# ignore wp root dir files
+/*.php
+/*.txt
+/*.html
+
+# ignore wp root dirs, except wp-content
+wp-includes/
+wp-admin/
+
+# ignore dir index files
+wp-content/index.php
+wp-content/themes/index.php
+wp-content/plugins/index.php
+wp-admin/index.php
+wp-admin/network/index.php
+wp-admin/user/index.php
+
+# ignore plugins
+wp-content/plugins/akismet/
+
