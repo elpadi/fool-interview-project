@@ -1,0 +1,22 @@
+{
+	"name": "elpadi/financial-pages",
+	"type": "library",
+	"keywords": ["wordpress"],
+	"homepage": "https://github.com/elpadi/fool-interview-project",
+	"license": "GPL-3.0+",
+	"minimum-stability": "stable",
+	"authors": [
+		{
+			"name": "Carlos Padilla",
+			"email": "padi_05@yahoo.com",
+			"homepage": "https://github.com/elpadi",
+			"role": "Developer"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"WordpressLib\\": "wplib/",
+			"FinancialPages\\": "src/"
+		}
+	}
+}

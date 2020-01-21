@@ -42,3 +42,5 @@ wp-admin/user/index.php
 # ignore plugins
 wp-content/plugins/akismet/
 
+# ignore composer libs
+vendor/
