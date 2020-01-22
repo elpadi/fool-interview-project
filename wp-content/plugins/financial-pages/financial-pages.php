@@ -64,9 +64,14 @@ function financial_pages_post_has_company_info($post=null) {
 
 add_action('pre_get_posts', function($query) {
 
-	if (!is_admin() && is_tax('stock') && $query->is_main_query()) {
-		// only have news articles in main query, 10 per page.
-		$query->set('post_type', 'news-article');
+	if (!is_admin() && $query->is_main_query()) {
+	   	if (is_tax('stock')) {
+			// only have news articles in main query, 10 per page.
+			$query->set('post_type', 'news-article');
+		}
+	   	if (is_home()) {
+			$query->set('post_type', ['news-article','stock-recommendation']);
+		}
 		$query->set('posts_per_page', 10);
 	}
 
