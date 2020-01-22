@@ -46,7 +46,7 @@ class CompanyInfo extends Widget {
 				"sector" => "Technology",
 				"image" => "https://financialmodelingprep.com/images-New-jpg/AAPL.jpg"
 			]
-		] : json_decode(file_get_contents("https://financialmodelingprep.com/api/v3/company/profile/".static::sanitizeStockSymbol($stock_symbol)));
+		] : json_decode(file_get_contents("https://financialmodelingprep.com/api/v3/company/profile/".static::sanitizeStockSymbol($stock_symbol)), TRUE);
 	}
 
 	public static function fetchPrice($stock_symbol) {
