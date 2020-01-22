@@ -14,6 +14,10 @@ get_header();
 
 <main id="site-content" role="main">
 
+	<header>
+		<p><a href="<?= get_post_type_archive_link('news-article'); ?>">News Articles</a></p>
+	</header>
+
 	<?php
 
 	if ( have_posts() ) {
