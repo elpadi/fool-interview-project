@@ -24,7 +24,7 @@ class CompanyInfo {
 	}
 
 	getProfile() {
-		if (('APP_CONFIG' in window) && window.APP_CONFIG) {
+		if (('DEBUG' in APP_CONFIG) && Number(APP_CONFIG.DEBUG)) {
 			return Promise.resolve({
 				"symbol" : "AAPL",
 				"profile" : {
@@ -52,7 +52,7 @@ class CompanyInfo {
 	}
 
 	getPrice() {
-		if (('APP_CONFIG' in window) && window.APP_CONFIG) {
+		if (('DEBUG' in APP_CONFIG) && Number(APP_CONFIG.DEBUG)) {
 			return Promise.resolve({
 				"symbol" : "AAPL",
 				"price" : 318.68

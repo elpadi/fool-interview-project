@@ -38,7 +38,7 @@ add_action('wp_enqueue_scripts', function() {
 	};
 
 	wp_localize_script('twentytwenty-js', 'APP_CONFIG', apply_filters('frontend_js_vars', [
-		'DEBUG' => WP_DEBUG,
+		'DEBUG' => WP_DEBUG ? 1 : 0,
 		'HEADERS' => getallheaders(),
 	]));
 
