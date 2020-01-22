@@ -1,7 +1,7 @@
 <?php
 if (isset($stock_data)) printf('<script>window.STOCK_COMPANY_INFO = %s;</script>', json_encode($stock_data));
 ?>
-<section class="company-info" data-stock-symbol="<?= $stock_symbol; ?>" data-info-type="finances">
+<section class="company-info" data-stock-symbol="<?= $stock_symbol; ?>" data-info-type="finances" data-stock-url="<?= financial_pages_get_stock_url($stock_symbol); ?>">
 	<main>
 		<p><strong>Price:</strong> <span class="company-info__field" data-key="price" data-format="money"></span></p>
 		<p><strong>Price Change:</strong> <span class="company-info__field" data-key="changes" data-format="money"></span></p>

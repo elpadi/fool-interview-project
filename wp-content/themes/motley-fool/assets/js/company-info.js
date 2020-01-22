@@ -9,10 +9,11 @@ class CompanyInfo {
 		return '$';
 	}
 
-	static formatValue(val, f) {
+	static formatValue(val, f, container) {
 		const cur = this.getCurrencySymbol();
-		switch (f) {
-			case 'url': return `<a href="${val}" target="_blank">${val}</a>`;
+		if (f) switch (f) {
+			case 'url': return `<a href="${val}" target="_blank" rel="nofollow">${val}</a>`;
+			case 'stockurl': return `<a href="${container.dataset.stockUrl}">${val}</a>`;
 			case 'money': return cur + val;
 			case 'money-range': return cur + val.replace(/([^0-9.,])([0-9]+)/g, '$1' + (cur == '$' ? '$$' : cur) + '$2');
 		}
@@ -74,7 +75,7 @@ class CompanyInfo {
 			Array.from(container.querySelectorAll(`.company-info__field`)).forEach(node => {
 				let key = node.dataset.key;
 				if (key && (key in data.profile)) {
-					node.innerHTML = node.dataset.format ? this.constructor.formatValue(data.profile[key], node.dataset.format) : data.profile[key];
+					node.innerHTML = this.constructor.formatValue(data.profile[key], node.dataset.format, container);
 				}
 			});
 
