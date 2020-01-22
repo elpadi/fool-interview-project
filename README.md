@@ -4,11 +4,11 @@ The Motley Fool sample subscription WordPress website. Includes custom post type
 
 ## Installation
 
-### Plugin
+### Plugin (Financial Pages)
 
-Move the plugin to the plugins directory and run the composer.json file inside the plugin directory.
+Move the plugin to the plugins directory and run the composer.json file inside the plugin directory. Proceed to activate the plugin.
 
-### Theme
+### Theme (Motley Fool)
 
-Move the theme into the themes directory.
+Move the theme into the themes directory. The theme is a child-theme of TwentyTwenty, which must already be installed.  Proceed to activate the theme.
 
