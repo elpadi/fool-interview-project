@@ -65,17 +65,7 @@ include(__DIR__.'/template-parts/financial-sidebar.php');
 
 <?php 
 if (intval(get_query_var('paged')) < 2):
-$recommendations = new WP_Query([
-	'post_type' => 'stock-recommendation',
-	'tax_query' => [
-		[
-			'taxonomy' => 'stock',
-			'field' => 'slug',
-			'terms' => get_query_var('stock'),
-		],
-	],
-	'nopaging' => true,
-]);
+$recommendations = new FinancialPages\RecommendationsQuery(get_query_var('stock'));
 
 if ($recommendations->have_posts()): ?>
 <section class="full-width stock-recommendations">
