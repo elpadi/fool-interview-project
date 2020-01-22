@@ -19,7 +19,7 @@ class CompanyInfo {
 		return val;
 	}
 
-	construct(stockSymbol) {
+	constructor(stockSymbol) {
 		this.stockSymbol = (stockSymbol.indexOf(':') ? stockSymbol.split(':').pop() : stockSymbol).trim().toUpperCase();
 	}
 
