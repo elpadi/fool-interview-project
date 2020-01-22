@@ -52,3 +52,6 @@ add_action('wp_enqueue_scripts', function() {
 
 }, 100);
 
+add_filter('theme_mod_blog_content', function($blogContentKey) {
+	return 'summary';
+}, 100);
